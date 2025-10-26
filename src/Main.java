@@ -1,10 +1,9 @@
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        StepTracker stepTracker = new StepTracker();
+        StepTracker tracker = new StepTracker(scanner);
         while (true) {
             System.out.println("1.Ввести количество шагов за определенный день");
             System.out.println("2.Изменить цель по количеству шагов в день");
@@ -12,11 +11,11 @@ public class Main {
             System.out.println("4.Выйти из приложения");
             int command = scanner.nextInt();
             if (command == 1) {
-                stepTracker.addNewNumberStepsPerDay();
+                tracker.addNewNumberStepsPerDay();
             } else if (command == 2) {
-                stepTracker.changeStepGoal();
+                tracker.changeStepGoal();
             } else if (command == 3) {
-                stepTracker.printStatistic();
+                tracker.printStatistic();
             } else if (command == 4) {
                 System.out.println("Пока!");
                 break;
